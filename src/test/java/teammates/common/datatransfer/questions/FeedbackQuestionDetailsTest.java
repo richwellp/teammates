@@ -56,6 +56,5 @@ public class FeedbackQuestionDetailsTest extends BaseTestCase {
         ______TS("All attributes are same, should be same");
         ((FeedbackTextQuestionDetails) f2).setRecommendedLength(50);
         assertEquals(f1, f2);
-
     }
 }
