@@ -23,8 +23,21 @@ public class FeedbackTextResponseDetailsTest extends BaseTestCase {
     }
 
     @Test
+    public void testValidateAttributesOfAnswer_emptyString_shouldNotReturnNull() {
+        FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails("");
+        assertNotNull(feedbackTextResponseDetails.getAnswer());
+    }
+
+    @Test
     public void testValidateSanitizedAnswerString_nullValues_shouldReturnTrue() {
         FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails(null);
+        assertEquals(feedbackTextResponseDetails.getAnswerString(),
+                SanitizationHelper.sanitizeForRichText(feedbackTextResponseDetails.getAnswer()));
+    }
+
+    @Test
+    public void testValidateSanitizedAnswerString_nullValues_shouldReturnTrue2() {
+        FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails("");
         assertEquals(feedbackTextResponseDetails.getAnswerString(),
                 SanitizationHelper.sanitizeForRichText(feedbackTextResponseDetails.getAnswer()));
     }
