@@ -17,6 +17,13 @@ public class FeedbackTextResponseDetailsTest extends BaseTestCase {
     }
 
     @Test
+    public void testValidateArgumentConstructor_diffValues_shouldReturnFalse() {
+        String testAnswer = "Hello World";
+        FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails(testAnswer);
+        assertNotEquals(feedbackTextResponseDetails.getAnswer(), "Goodmorning");
+    }
+
+    @Test
     public void testValidateAttributesOfAnswer_nullValue_shouldReturnNull() {
         FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails(null);
         assertNull(feedbackTextResponseDetails.getAnswer());
@@ -36,7 +43,7 @@ public class FeedbackTextResponseDetailsTest extends BaseTestCase {
     }
 
     @Test
-    public void testValidateSanitizedAnswerString_nullValues_shouldReturnTrue2() {
+    public void testValidateSanitizedAnswerString_emptyString_shouldReturnTrue2() {
         FeedbackTextResponseDetails feedbackTextResponseDetails = new FeedbackTextResponseDetails("");
         assertEquals(feedbackTextResponseDetails.getAnswerString(),
                 SanitizationHelper.sanitizeForRichText(feedbackTextResponseDetails.getAnswer()));
