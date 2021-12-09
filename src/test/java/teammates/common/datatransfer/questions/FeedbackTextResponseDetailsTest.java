@@ -6,6 +6,7 @@ import teammates.common.util.SanitizationHelper;
 import teammates.test.BaseTestCase;
 
 /**
+ * Tests for FeedbackTextResponseDetails
  * SUT: {@link FeedbackTextResponseDetails}.
  */
 public class FeedbackTextResponseDetailsTest extends BaseTestCase {

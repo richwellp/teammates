@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import teammates.test.BaseTestCase;
 
 /**
+ * Tests for FeedbackQuestionDetails
  * SUT: {@link FeedbackQuestionDetails}.
  */
 public class FeedbackQuestionDetailsTest extends BaseTestCase {
